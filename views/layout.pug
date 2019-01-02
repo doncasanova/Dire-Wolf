@@ -1,27 +1,39 @@
-doctype html
-html
-  head
+﻿<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+		
+		<title>Dakota Clover</title>
+		<!-- Loading third party fonts -->
+		<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900" rel="stylesheet" type="text/css">
+		<link href="fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
+		<!-- Loading main css file -->
+		<link rel="stylesheet" href="/css/style.css">
+		
+		<div id="site-content">
+			<header class="site-header">
+				<div class="container">
+					<a href="index.html" id="branding">
+						<img src="images/logo.png" alt="Site Title">
+						<small class="site-description">Come Gather</small>
+					</a> <!-- #branding -->
+					
+					<nav class="main-navigation">
+						<button type="button" class="toggle-menu"><i class="fa fa-bars"></i></button>
+						<ul class="menu">
+							<li class="menu-item current-menu-item"><a href="/">Home</a></li>
+							<li class="menu-item"><a href="about.html">About</a></li>
+							<li class="menu-item"><a href="gallery.html">Gallery</a></li>
+							<li class="menu-item"><a href="download.html">Download</a></li>
+							<li class="menu-item"><a href="blog.html">Blog</a></li>
+							<li class="menu-item"><a href="contact.html">Contact</a></li>
+						</ul> <!-- .menu -->
+					</nav> <!-- .main-navigation -->
+					<div class="mobile-menu"></div>
+				</div>
+			</header> <!-- .site-header -->
+			
 
-    title= `${title}`
-    
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <link rel='stylesheet' href='/css/styles.css'>
-
-  body
-
-    <nav class="navbar navbar-light bg-light">
-      <a class="navbar-brand" href="/login">Login</a>
-      <a class="navbar-brand" href="/logout">Logout</a>
-      <a class="navbar-brand" href="/form">Sign up</a>
-    </nav>
-
-
-
-
-
-
-    h1.d-flex.justify-content-center #{pageHeader}
-    
-        
-    block content
+block content

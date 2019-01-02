@@ -1,10 +1,16 @@
 {
   "ExpandedNodes": [
     "",
-    "\\models",
-    "\\routes",
+    "\\images",
+    "\\node_modules",
+    "\\node_modules\\mongodb-core",
+    "\\node_modules\\mongodb-core\\lib",
+    "\\node_modules\\mongodb-core\\lib\\auth",
+    "\\node_modules\\mongodb-core\\lib\\connection",
+    "\\node_modules\\mongodb-core\\lib\\sdam",
+    "\\node_modules\\mongodb-core\\lib\\topologies",
     "\\views"
   ],
-  "SelectedNode": "\\views\\layout.pug",
+  "SelectedNode": "\\README.md",
   "PreviewInSolutionExplorer": false
 }

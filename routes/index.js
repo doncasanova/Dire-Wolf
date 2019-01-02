@@ -11,7 +11,7 @@ const basic = auth.basic({
 });
 
 router.get('/', (req, res) => {
-    res.render('contact');
+    res.render('index');
 
 });
 
