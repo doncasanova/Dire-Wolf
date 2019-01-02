@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\models",
+    "\\routes",
+    "\\views"
   ],
-  "SelectedNode": "\\package.json",
+  "SelectedNode": "\\views\\layout.pug",
   "PreviewInSolutionExplorer": false
 }
