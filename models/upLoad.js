@@ -8,11 +8,15 @@ const upLoadSchema = new Schema({
     type: String,
     trim: true
   },
-  email: {
+  address: {
     type: String,
     trim: true
     },
-  password: {
+  date: {
+      type: String,
+      trim: true
+    },
+  time: {
       type: String,
       trim: true
     }

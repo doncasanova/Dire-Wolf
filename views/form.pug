@@ -1,0 +1,53 @@
+extends layout
+
+block content
+  -data = data || {}
+
+  if errors
+    ul.my-errors
+      for error in errors
+        li= error.msg
+
+  form(action="." method="POST" class="form-registration")
+    
+    label(for="name") Name:
+    input(
+      type="text"
+      id="name"
+      name="name"
+      class="form-control"
+      value=data.name
+    )
+
+    label(for="adderss") Address:
+    input(
+      type="address"
+      id="address"
+      name="address"
+      class="form-control"
+      value=data.address
+    )
+    
+    label(for="date") Date:
+    input(
+      type="date"
+      id="date"
+      name="date"
+      class="form-control"
+      value=data.date
+    )
+
+    label(for="time") Time:
+    input(
+      type="time"
+      id="time"
+      name="time"
+      class="form-control"
+      value=data.time
+    )
+
+    input(
+      type="submit"
+      value="Submit"
+      class="btn btn-lg btn-primary btn-block"
+    )
