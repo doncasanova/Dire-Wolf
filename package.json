@@ -8,15 +8,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/doncasanova/Dire-Wolf.git"
+    "url": "git+https://github.com/doncasanova/Dakota-Clover.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/doncasanova/Dire-Wolf/issues"
+    "url": "https://github.com/doncasanova/Dakota-Clover/issues"
   },
-  "homepage": "https://github.com/doncasanova/Dire-Wolf#readme",
+  "homepage": "https://github.com/doncasanova/Dakota-Clover#readme",
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.18.3",
