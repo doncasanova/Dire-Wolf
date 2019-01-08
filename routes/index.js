@@ -11,7 +11,12 @@ const basic = auth.basic({
 });
 
 router.get('/', (req, res) => {
-    res.render('index');
+    Upload.find()
+        .then((uploads) => {
+            console.log(uploads);
+            res.render('index', { title: 'Listing registrations', uploads });
+        })
+        .catch(() => { res.send('Sorry! Something went wrong.'); });
 
 });
 
