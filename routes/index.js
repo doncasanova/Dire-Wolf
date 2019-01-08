@@ -66,8 +66,6 @@ router.post('/',
         let event = req.body;
         console.log(event);
 
-        
-
             let upLoad = new Upload(req.body);
 
             upLoad.save()
@@ -80,6 +78,15 @@ router.post('/',
     }
 
 );
+
+router.get('/registrations', (req, res) => {
+    Upload.find()
+        .then((uploads) => {
+            console.log(uploads);
+            res.render('index', { title: 'Listing registrations', uploads });
+        })
+        .catch(() => { res.send('Sorry! Something went wrong.'); });
+});
 
 
 
