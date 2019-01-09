@@ -13,8 +13,9 @@ const basic = auth.basic({
 router.get('/', (req, res) => {
     Upload.find()
         .then((uploads) => {
-            console.log(uploads);
-            res.render('index', { title: 'Listing registrations', uploads });
+            let events = uploads[0];
+            //console.log(events);
+            res.render('index', { title: 'Listing registrations', events });
         })
         .catch(() => { res.send('Sorry! Something went wrong.'); });
 

@@ -66,6 +66,7 @@ block content
 							<h2 class="section-title">Upcoming events</h2>
 
 							<div class="event-nav">
+							h1.welcome Welcome to your page #{events.name} !
 								<a class="prev" id="event-prev" href="#"><i class="fa fa-caret-left"></i></a>
 								<a class="next" id="event-next" href="#"><i class="fa fa-caret-right"></i></a>
 							</div> <!-- .event-nav -->
@@ -75,11 +76,12 @@ block content
 							
 							<div class="event">
 								<div class="entry-date">
-									<div class="date">23</div>
+									<div class="date">#{events.date}</div>
 									<span class="month">Jun</span>
 								</div>
-								<h2 class="entry-title"><a href="#">Sed et persipiatis unde omnis iste natus</a></h2>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid temporibus quos aspernatur</p>
+								<h2 class="entry-title"><a href="#">#{events.name}</a></h2>
+								<p>#{events.address}</p>
+								<p>#{events.time}</p>
 							</div> <!-- .event -->
 							
 							
