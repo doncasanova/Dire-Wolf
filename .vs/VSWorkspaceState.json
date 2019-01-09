@@ -1,10 +1,14 @@
 {
   "ExpandedNodes": [
     "",
+<<<<<<< HEAD
     "\\models",
     "\\routes",
+=======
+    "\\js",
+>>>>>>> 7715a9ff676a591f2663c1edc49c12d09373ecc6
     "\\views"
   ],
-  "SelectedNode": "\\routes\\index.js",
+  "SelectedNode": "\\server.js",
   "PreviewInSolutionExplorer": false
 }
