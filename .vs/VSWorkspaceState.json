@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
+    "\\routes",
     "\\views"
   ],
-  "SelectedNode": "\\views\\index.pug",
+  "SelectedNode": "\\views\\test.pug",
   "PreviewInSolutionExplorer": false
 }
