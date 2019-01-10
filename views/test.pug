@@ -1,25 +1,10 @@
 extends layout
 
 block content
-	if events.length
-	table.table-primary.d-flex.justify-content-center
-		tr
-			th Name
-			th Email
-	each item in events
-		tr
-			td= events.name
-			<br>
-			td= events.date
-	else
-		p No registrations yet :(
-
-		var arr=['one', 'two', 'three'];
-		var s = 'string';
-
-        section= s
-        for (var i=0; i<3; i++)
-            div= arr[i]
+	each val in values.length ? values : [{ "name":"John", "age":30, "car":null },{ "name":"John", "age":30, "car":null }]
+		li= val.name
+		li= val.age
+		li= val.car
 
 
 
