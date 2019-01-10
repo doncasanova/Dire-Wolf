@@ -97,7 +97,7 @@ router.get('/registrations', (req, res) => {
 router.get('/test', (req, res) => {
     Upload.find()
         .then((uploads) => {
-            let events = uploads[0];
+            let events = uploads;
             console.log(events);
             res.render('test', { title: 'Listing registrations', events });
         })
