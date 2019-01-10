@@ -3,7 +3,7 @@ extends layout
 block content
 	- var values = [];
 	ul
-	each val in events.length ? values : [{ "name":"John", "age":30, "car":null },{ "name":"John", "age":30, "car":null }]
+	each val in events.length ? events 
 		li= val.name
 		li= val.age
 		li= val.car
