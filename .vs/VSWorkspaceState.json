@@ -1,9 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\js",
+    "\\routes",
     "\\views"
   ],
-  "SelectedNode": "\\server.js",
+  "SelectedNode": "\\views\\contact.pug",
   "PreviewInSolutionExplorer": false
 }
