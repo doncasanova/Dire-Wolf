@@ -19,6 +19,10 @@ const upLoadSchema = new Schema({
   time: {
       type: String,
       trim: true
+    },
+  description: {
+      type: String,
+      trim: true
     }
 });
 
