@@ -11,9 +11,10 @@ const basic = auth.basic({
 });
 
 router.get('/', (req, res) => {
+    
     Upload.find()
         .then((uploads) => {
-            let events = uploads[0];
+            events = uploads[1];
             console.log(events);
             res.render('index', { title: 'Listing registrations', events });
         })

@@ -1,12 +1,13 @@
 extends layout
 
 block content
+
 	if events.length
 	table.table-primary.d-flex.justify-content-center
 		tr
 			th Name
 			th Email
-	each item in events
+	each event in events
 		tr
 			td= events.name
 			<br>
