@@ -94,6 +94,16 @@ router.get('/registrations', (req, res) => {
         .catch(() => { res.send('Sorry! Something went wrong.'); });
 });
 
+router.get('/test', (req, res) => {
+    Upload.find()
+        .then((uploads) => {
+            let events = uploads[0];
+            console.log(events);
+            res.render('test', { title: 'Listing registrations', events });
+        })
+        .catch(() => { res.send('Sorry! Something went wrong.'); });
+
+});
 
 
 module.exports = router;
