@@ -1,6 +1,18 @@
 extends layout
 
 block content
+	if events.length
+	table.table-primary.d-flex.justify-content-center
+		tr
+			th Name
+			th Email
+	each item in events
+		tr
+			td= events.name
+			<br>
+			td= events.date
+	else
+		p No registrations yet :(
 			<div class="hero">
 				<div class="slider">
 					<ul class="slides">
@@ -81,7 +93,7 @@ block content
 								</div>
 								<h2 class="entry-title"><a href="#">#{events.name}</a></h2>
 								<p>#{events.address}</p>
-								<p>#{events.time}</p>
+								<p>#{events.description}</p>
 							</div> <!-- .event -->
 							
 							
