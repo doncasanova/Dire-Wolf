@@ -1,15 +1,12 @@
 extends layout
 
 block content
+	- var values = [];
+	ul
 	each val in values.length ? values : [{ "name":"John", "age":30, "car":null },{ "name":"John", "age":30, "car":null }]
 		li= val.name
 		li= val.age
 		li= val.car
-
-
-
-
-
 
 			<div class="hero">
 				<div class="slider">
