@@ -15,7 +15,7 @@ router.get('/', (req, res) => {
     Upload.find()
         .then((uploads) => {
             events = uploads[1];
-            console.log(events);
+            //console.log(events);
             res.render('index', { title: 'Listing registrations', events });
         })
         .catch(() => { res.send('Sorry! Something went wrong.'); });
@@ -96,13 +96,23 @@ router.get('/registrations', (req, res) => {
 });
 
 router.get('/test', (req, res) => {
-    Upload.find()
-        .then((uploads) => {
-            let events = uploads;
-            console.log(events);
-            res.render('test', { title: 'Listing registrations', events });
-        })
-        .catch(() => { res.send('Sorry! Something went wrong.'); });
+    Upload.find(function (err, uploadsResults) {
+        console.log("this is test  " + uploadsResults);
+        if (err) {
+            res.send(err);
+        } else if (uploadsResults.length) {
+            res.render('test', { 'events': uploadsResults });
+           
+        } else {
+            res.send('no documents found');
+        }
+    });
+      //  .then((uploads) => {
+         //   let events = uploads;
+         //   console.log(events);
+           
+       // })
+      //  .catch(() => { res.send('Sorry! Something went wrong.'); });
 
 });
 
