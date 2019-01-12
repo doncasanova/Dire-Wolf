@@ -14,8 +14,8 @@ router.get('/', (req, res) => {
     
     Upload.find()
         .then((uploads) => {
-            events = uploads[1];
-            //console.log(events);
+            events = uploads[0];
+            console.log(events);
             res.render('index', { title: 'Listing registrations', events });
         })
         .catch(() => { res.send('Sorry! Something went wrong.'); });
