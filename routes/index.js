@@ -97,7 +97,9 @@ router.get('/registrations', (req, res) => {
 
 router.get('/test', (req, res) => {
     Upload.find(function (err, uploadsResults) {
-        console.log("this is test  " + uploadsResults);
+        console.log("this is test  " + uploadsResults[0].date);
+        let date = uploadsResults[0];
+        console.log(date);
         if (err) {
             res.send(err);
         } else if (uploadsResults.length) {

@@ -7,7 +7,7 @@ block content
 					<div class="col-2">
 						<div class="event1">
 							<div class="entry-date">
-								<div class="date"> #{value.date}</div>
+								<div class="date"> #{value.date.substring(5,7)}</div>
 									<span class="month"> #{value.month}</span>
 								</div>
 									<h2 class="entry-title"><a href="#"> #{value.name}</a></h2>
@@ -86,7 +86,7 @@ block content
 							<h2 class="section-title">Upcoming events</h2>
 
 							<div class="event-nav">
-							h1.welcome Welcome to your page #{events.name} !
+							
 								<a class="prev" id="event-prev" href="#"><i class="fa fa-caret-left"></i></a>
 								<a class="next" id="event-next" href="#"><i class="fa fa-caret-right"></i></a>
 							</div> <!-- .event-nav -->
@@ -95,11 +95,16 @@ block content
 						<div class="event-carousel">
 
 								each value in events
+									-var PM = "am"
+									- var test = value.time.substring(0,2)
+									if test > 12 
+									- var PM = "pm"
 									
+
 										<div class="event">
 											<div class="entry-date">
-												<div class="date1"> #{value.time}</div>
-												<span class="month"> #{value.month}</span>
+												<div class="date1"> #{test-12}:#{value.time.substring(3,5)}#{PM}</div>
+												<span class="month"> #{value.date.substring(5,7)}</span>
 											</div>
 												<h2 class="entry-title"><a href="#"> #{value.name}</a></h2>
 												<p> #{value.description}</p>
