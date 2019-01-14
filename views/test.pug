@@ -95,12 +95,11 @@ block content
 						<div class="event-carousel">
 
 								each value in events
-									
+									- var PM = "am"
 									- var test = value.time.substring(0,2)
 									if test > 12 
 									- var PM = "pm"
-									else
-									- var PM = "am"
+									
 
 										<div class="event">
 											<div class="entry-date">
