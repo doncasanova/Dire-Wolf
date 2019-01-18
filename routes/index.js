@@ -10,17 +10,17 @@ const basic = auth.basic({
     file: path.join(__dirname, '../users.htpasswd')
 });
 
-router.get('/', (req, res) => {
+//router.get('/', (req, res) => {
     
-    Upload.find()
-        .then((uploads) => {
-            events = uploads[0];
-            console.log(events);
-            res.render('index', { title: 'Listing registrations', events });
-        })
-        .catch(() => { res.send('Sorry! Something went wrong.'); });
+//    Upload.find()
+//        .then((uploads) => {
+//            events = uploads[0];
+//            console.log(events);
+//            res.render('index', { title: 'Listing registrations', events });
+//        })
+//        .catch(() => { res.send('Sorry! Something went wrong.'); });
 
-});
+//});
 
 router.get('/about', (req, res) => {
     res.render('about');
@@ -95,7 +95,7 @@ router.get('/registrations', (req, res) => {
         .catch(() => { res.send('Sorry! Something went wrong.'); });
 });
 
-router.get('/test', (req, res) => {
+router.get('/', (req, res) => {
     Upload.find(function (err, uploadsResults) {
         //console.log("this is test  " + uploadsResults[0].date);
         let date = uploadsResults[0];
@@ -103,7 +103,7 @@ router.get('/test', (req, res) => {
         if (err) {
             res.send(err);
         } else if (uploadsResults.length) {
-            res.render('test', { 'events': uploadsResults });
+            res.render('index', { 'events': uploadsResults });
            
         } else {
             res.send('no documents found');
