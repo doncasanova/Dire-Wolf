@@ -1,26 +1,7 @@
 extends layout
 
 block content
-
-			each value in events
-				<div class="row justify-content-center"
-					<div class="col-2">
-						<div class="event1">
-							<div class="entry-date">
-								<div class="date"> #{value.date.substring(5,7)}</div>
-									<span class="month"> #{value.month}</span>
-								</div>
-									<h2 class="entry-title"><a href="#"> #{value.name}</a></h2>
-									<p> #{value.description}</p>
-							</div> <!-- .event -->		
-						</div>
-					</div>
-				</div>	
-			
-			else
-				td There are no values
-
-		
+	
 			<div class="hero">
 				<div class="slider">
 					<ul class="slides">
@@ -95,23 +76,51 @@ block content
 						<div class="event-carousel">
 
 								each value in events
-									- var PM = "am"
-									- var test = value.time.substring(0,2)
-									if test > 12 
+									- var month = value.date.substring(5,7)
+									- var day = value.date.substring(8,10)
+									- var hour = value.time.substring(0,2)													
 									- var PM = "pm"
-									
-
 										<div class="event">
 											<div class="entry-date">
-												<div class="date1"> #{test-12}:#{value.time.substring(3,5)}#{PM}</div>
-												<span class="month"> #{value.date.substring(5,7)}</span>
+												case month
+													when '12'
+														h1-date Dec
+													when '11'
+														h1-date Nov
+													when '10'
+														h1-date Oct
+													when '09'
+														h1-date Sept
+													when '08'
+														h1-date Aug
+													when '07'
+														h1-date July
+													when '06'
+														h1-date June
+													when '05'
+														h1-date May
+													when '04'
+														h1-date Apr
+													when '03'
+														h1-date Mar
+													when '02'
+														h1-date Feb
+													when '01'
+														h1-date Jan
+													default
+														p Missing the month
+												<div class="date"> #{day}</div>
+												if hour > 12
+													<div> #{hour-12}:#{value.time.substring(3,5)}pm</div>
+												else
+													<div> #{hour}:#{value.time.substring(3,5)}am</div>
 											</div>
-												<h2 class="entry-title"><a href="#"> #{value.name}</a></h2>
-												<p> #{value.description}</p>
+											<div>
+												h2.entry-title <a href="#"> #{value.name}</a>
+												h2 #{value.description}
+											</div>
 										</div> <!-- .event -->		
 										
-										
-			
 								else
 									td There are no values
 						
