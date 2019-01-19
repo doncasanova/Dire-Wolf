@@ -1,34 +1,35 @@
 extends layout
 
 block content
+	
 			<div class="hero">
 				<div class="slider">
 					<ul class="slides">
 						<li class="lazy-bg" data-background="./images/dakota1.jpg">
 							<div class="container">
 							<h2 class="slide-title">Dakota Clover</h2>
-							<h3 class="slide-subtitle">Come Gather</h3>
-								<p class="slide-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br>Fugiat aliquid minus nemo sed est.</p>
+							<h3 class="slide-subtitle">Making Lasting Memories With You </h3>
+								//<p class="slide-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br>Fugiat aliquid minus nemo sed est.</p>
 
-								<a href="#" class="button cut-corner">Read More</a>
+								//<a href="#" class="button cut-corner">Read More</a>
 							</div>
 						</li>
 						<li class="lazy-bg" data-background="./images/dakota2.jpg">
 							<div class="container">
 							<h2 class="slide-title">Dakota Clover</h2>
-									<h3 class="slide-subtitle">Come Gather</h3>
-									<p class="slide-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br>Fugiat aliquid minus nemo sed est.</p>
+									<h3 class="slide-subtitle">Making Lasting Memories With You</h3>
+									//<p class="slide-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. //////<br>Fugiat aliquid minus nemo sed est.</p>
 
-									<a href="#" class="button cut-corner">Read More</a>
+									//<a href="#" class="button cut-corner">Read More</a>
 							</div>
 						</li>
 						<li class="lazy-bg" data-background="./images/dakota3.jpg">
 							<div class="container">
 								<h2 class="slide-title">Dakota Clover</h2>
-									<h3 class="slide-subtitle">Come Gather</h3>
-									<p class="slide-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br>Fugiat aliquid minus nemo sed est.</p>
+									<h3 class="slide-subtitle">Making Lasting Memories With You</h3>
+									//<p class="slide-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br>Fugiat aliquid minus nemo sed est.</p>
 
-									<a href="#" class="button cut-corner">Read More</a>
+									//<a href="#" class="button cut-corner">Read More</a>
 							</div>
 						</li>
 					</ul>
@@ -43,14 +44,14 @@ block content
 							<ul class="slides">
 								<li>
 									<blockquote>
-										<p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo"</p>
+										<p>"Testimonial section here"</p>
 										<cite>John Smith</cite>
 										<span>Corporation CEO, books author</span>
 									</blockquote>
 								</li>
 								<li>
 									<blockquote>
-										<p>"Iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo"</p>
+										<p>"Testimonial section here and here"</p>
 										<cite>John Smith</cite>
 										<span>Corporation CEO, books author</span>
 									</blockquote>
@@ -66,63 +67,63 @@ block content
 							<h2 class="section-title">Upcoming events</h2>
 
 							<div class="event-nav">
-							h1.welcome Welcome to your page #{events.name} !
-								<a class="prev" id="event-prev" href="#"><i class="fa fa-caret-left"></i></a>
-								<a class="next" id="event-next" href="#"><i class="fa fa-caret-right"></i></a>
+							
+								<a class="prev" id="event-prev" href="#"><i class="fa fa-caret-left">></i></a>
+								<a class="next" id="event-next" href="#"><i class="fa fa-caret-right"><</i></a>
 							</div> <!-- .event-nav -->
 
 						</header> <!-- .section-header -->
 						<div class="event-carousel">
-							
-							<div class="event">
-								<div class="entry-date">
-									<div class="date">#{events.date}</div>
-									<span class="month">Jun</span>
-								</div>
-								<h2 class="entry-title"><a href="#">#{events.name}</a></h2>
-								<p>#{events.address}</p>
-								<p>#{events.description}</p>
-							</div> <!-- .event -->
-							
-							
-							<div class="event">
-								<div class="entry-date">
-									<div class="date">23</div>
-									<span class="month">Jun</span>
-								</div>
-								<h2 class="entry-title"><a href="#">Sed et persipiatis unde omnis iste natus</a></h2>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid temporibus quos aspernatur</p>
-							</div> <!-- .event -->
-							
-							
-							<div class="event">
-								<div class="entry-date">
-									<div class="date">23</div>
-									<span class="month">Jun</span>
-								</div>
-								<h2 class="entry-title"><a href="#">Sed et persipiatis unde omnis iste natus</a></h2>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid temporibus quos aspernatur</p>
-							</div> <!-- .event -->
-							
-							
-							<div class="event">
-								<div class="entry-date">
-									<div class="date">23</div>
-									<span class="month">Jun</span>
-								</div>
-								<h2 class="entry-title"><a href="#">Sed et persipiatis unde omnis iste natus</a></h2>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid temporibus quos aspernatur </p>
-							</div> <!-- .event -->
-							
-							
-							<div class="event">
-								<div class="entry-date">
-									<div class="date">23</div>
-									<span class="month">Jun</span>
-								</div>
-								<h2 class="entry-title"><a href="#">Sed et persipiatis unde omnis iste natus</a></h2>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid temporibus quos aspernatur </p>
-							</div> <!-- .event -->
+
+								each value in events
+									- var month = value.date.substring(5,7)
+									- var day = value.date.substring(8,10)
+									- var hour = value.time.substring(0,2)													
+									- var PM = "pm"
+										<div class="event">
+											<div class="entry-date">
+												case month
+													when '12'
+														h1-date Dec
+													when '11'
+														h1-date Nov
+													when '10'
+														h1-date Oct
+													when '09'
+														h1-date Sept
+													when '08'
+														h1-date Aug
+													when '07'
+														h1-date July
+													when '06'
+														h1-date June
+													when '05'
+														h1-date May
+													when '04'
+														h1-date Apr
+													when '03'
+														h1-date Mar
+													when '02'
+														h1-date Feb
+													when '01'
+														h1-date Jan
+													default
+														p Missing the month
+												<div class="date"> #{day}</div>
+												if hour > 12
+													<div> #{hour-12}:#{value.time.substring(3,5)}pm</div>
+												else
+													<div> #{hour}:#{value.time.substring(3,5)}am</div>
+											</div>
+											<div>
+												h2.entry-title <a href="#"> #{value.name}</a>
+												h2 #{value.description}
+											</div>
+										</div> <!-- .event -->		
+										
+								else
+									td There are no values
+						
 							
 						</div> <!-- .event-carousel -->
 					</div> <!-- .container -->
@@ -138,8 +139,8 @@ block content
 									<figure class="cut-corner">
 										<img src="https://scontent.ffcm1-1.fna.fbcdn.net/v/t1.0-9/35407471_1644186992367885_7132266019367682048_n.jpg?_nc_cat=105&_nc_ht=scontent.ffcm1-1.fna&oh=144cf16d176c037c77c9fd5704326363&oe=5C90F42A" alt="">
 									</figure>
-									<h3 class="feature-title">Similique sunt in culpa qui officia deserunt mollitia animi laborum dolorum</h3>
-									<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p>
+									<h3 class="feature-title">Small Private Intimate Venues</h3>
+									<p>Something here about private venues</p>
 								</div> <!-- .feature -->
 							</div>
 							<div class="col-md-4">
@@ -147,8 +148,8 @@ block content
 									<figure class="cut-corner">
 										<img src="https://scontent.ffcm1-2.fna.fbcdn.net/v/t1.0-9/25445998_1458400024279917_815193772089642815_n.jpg?_nc_cat=108&_nc_ht=scontent.ffcm1-2.fna&oh=0a2dbcbdefc71b1567c7c3ff2cacd5bf&oe=5C93F362" alt="">
 									</figure>
-									<h3 class="feature-title">Similique sunt in culpa qui officia deserunt mollitia animi laborum dolorum</h3>
-									<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p>
+									<h3 class="feature-title">Small Group Gatherings</h3>
+									<p>Something here about smaller venues</p>
 								</div> <!-- .feature -->
 							</div>
 							<div class="col-md-4">
@@ -156,8 +157,8 @@ block content
 									<figure class="cut-corner">
 										<img src="https://scontent.ffcm1-2.fna.fbcdn.net/v/t1.0-9/22196067_1390717244381529_761672453259035627_n.jpg?_nc_cat=104&_nc_ht=scontent.ffcm1-2.fna&oh=ad55736a21fe4f9dfd94e315f1a630ef&oe=5CC9FAB6" alt="">
 									</figure>
-									<h3 class="feature-title">Similique sunt in culpa qui officia deserunt mollitia animi laborum dolorum</h3>
-									<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p>
+									<h3 class="feature-title">Weddings and Large corporate events</h3>
+									<p>Something here about large events</p>
 								</div> <!-- .feature -->
 							</div>
 						</div>
@@ -165,7 +166,7 @@ block content
 				</div> <!-- .why-chooseus-section -->
 			</main> <!-- .main-content -->
 
-			
+		
 			</div>	<!-- #site-content -->
 
 			<script src="js/jquery-1.11.1.min.js"></script>
