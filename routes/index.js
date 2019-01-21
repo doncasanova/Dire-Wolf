@@ -96,10 +96,19 @@ router.get('/registrations', (req, res) => {
 });
 
 router.get('/', (req, res) => {
+    var fullDate = new Date();
+    var twoDigitMonth = ((fullDate.getMonth().length + 1) === 1) ? (fullDate.getMonth() + 1) : '0' + (fullDate.getMonth() + 1);
+
+    var currentDate = fullDate.getFullYear() + "-" + twoDigitMonth + "-" + fullDate.getDate();
+    console.log(currentDate);
     Upload.find(function (err, uploadsResults) {
+        
         //console.log("this is test  " + uploadsResults[0].date);
         let date = uploadsResults[0];
-        console.log(date);
+        if (date.date < currentDate) {
+            console.log("hello out there");
+        }
+        console.log(date.date);
         if (err) {
             res.send(err);
         } else if (uploadsResults.length) {
@@ -118,6 +127,13 @@ router.get('/', (req, res) => {
 
 });
 
+router.get('/:id/delete', (req, res) => {
+    console.log("in delete");
+    Upload.findByIdAndDelete(req.params.id, function (err) {
+        if (err) return next(err);
+        res.render('delete');
+    });
+});
 
 module.exports = router;
 
