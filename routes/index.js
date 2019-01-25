@@ -101,7 +101,7 @@ router.get('/', (req, res) => {
 
     var currentDate = fullDate.getFullYear() + "-" + twoDigitMonth + "-" + fullDate.getDate();
     console.log(currentDate);
-    Upload.find(function (err, uploadsResults) {
+    Upload.find({ date: { $gte: currentDate } }, function (err, uploadsResults) {
         
         //console.log("this is test  " + uploadsResults[0].date);
         let date = uploadsResults[0];
