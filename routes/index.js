@@ -101,7 +101,7 @@ router.get('/', (req, res) => {
 
     var currentDate = fullDate.getFullYear() + "-" + twoDigitMonth + "-" + fullDate.getDate();
     console.log(currentDate);
-    Upload.find({ date: { $gte: currentDate } }, function (err, uploadsResults) {
+    Upload.find({ date: { $gte: currentDate } }).sort({ date: 1 }).exec(function (err, uploadsResults) {
         
         //console.log("this is test  " + uploadsResults[0].date);
         let date = uploadsResults[0];
@@ -133,6 +133,29 @@ router.get('/:id/delete', (req, res) => {
         if (err) return next(err);
         res.render('delete');
     });
+});
+
+
+router.get('/test', (req, res) => {
+    var fullDate = new Date();
+    var twoDigitMonth = ((fullDate.getMonth().length + 1) === 1) ? (fullDate.getMonth() + 1) : '0' + (fullDate.getMonth() + 1);
+
+    var currentDate = fullDate.getFullYear() + "-" + twoDigitMonth + "-" + fullDate.getDate();
+    console.log(currentDate);
+    Upload.find({ $orderby: { date: -1 } },function (err, uploadsResults){
+        console.log('sorting  ' + uploadsResults);
+        res.render('form');
+    });
+
+
+    Upload.find().sort({ date: -1 }).exec(function (err, cursor) {
+        console.log('new ' + cursor);
+
+    });
+    
+        
+    
+    
 });
 
 module.exports = router;
