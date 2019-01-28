@@ -1,13 +1,15 @@
 {
   "ExpandedNodes": [
     "",
+    "\\fonts",
     "\\images",
     "\\public",
     "\\public\\css",
     "\\public\\images",
+    "\\public\\js",
     "\\routes",
-    "\\views"
+    "\\sass"
   ],
-  "SelectedNode": "\\public\\css\\styles.css",
+  "SelectedNode": "\\routes\\index.js",
   "PreviewInSolutionExplorer": false
 }

@@ -100,15 +100,11 @@ router.get('/', (req, res) => {
     var twoDigitMonth = ((fullDate.getMonth().length + 1) === 1) ? (fullDate.getMonth() + 1) : '0' + (fullDate.getMonth() + 1);
 
     var currentDate = fullDate.getFullYear() + "-" + twoDigitMonth + "-" + fullDate.getDate();
-    console.log(currentDate);
+   
     Upload.find({ date: { $gte: currentDate } }).sort({ date: 1 }).exec(function (err, uploadsResults) {
         
-        //console.log("this is test  " + uploadsResults[0].date);
         let date = uploadsResults[0];
-        if (date.date < currentDate) {
-            console.log("hello out there");
-        }
-        console.log(date.date);
+                                                         
         if (err) {
             res.send(err);
         } else if (uploadsResults.length) {
@@ -118,13 +114,6 @@ router.get('/', (req, res) => {
             res.send('no documents found');
         }
     });
-      //  .then((uploads) => {
-         //   let events = uploads;
-         //   console.log(events);
-           
-       // })
-      //  .catch(() => { res.send('Sorry! Something went wrong.'); });
-
 });
 
 router.get('/:id/delete', (req, res) => {
