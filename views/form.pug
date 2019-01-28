@@ -7,7 +7,8 @@ block content
     ul.my-errors
       for error in errors
         li= error.msg
-
+  <div class = "row">
+  <div class = "col-4">
   form(action="." method="POST" class="form-registration")
     
     label(for="name") Name:
@@ -37,15 +38,6 @@ block content
       value=data.date
     )
 
-    label(for="month") Month:
-    input(
-      type="month"
-      id="month"
-      name="month"
-      class="form-control"
-      value=data.month
-    )
-
     label(for="time") Time:
     input(
       type="time"
@@ -53,6 +45,15 @@ block content
       name="time"
       class="form-control"
       value=data.time
+    )
+
+    label(for="url") Web site:
+    input(
+      type="url"
+      id="url"
+      name="url"
+      class="form-control"
+      value=data.url
     )
 
     label(for="description") Description:
@@ -69,3 +70,5 @@ block content
       value="Submit"
       class="btn btn-lg btn-primary btn-block"
     )
+    </div>
+    </div>

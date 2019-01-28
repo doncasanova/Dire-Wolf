@@ -16,11 +16,11 @@ const upLoadSchema = new Schema({
       type: String,
       trim: true
     },
-  month: {
-        type: String,
-        trim: true
-    },
   time: {
+      type: String,
+      trim: true
+    },
+  url: {
       type: String,
       trim: true
     },
