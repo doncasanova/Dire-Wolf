@@ -6,10 +6,11 @@
     "\\public",
     "\\public\\css",
     "\\public\\images",
+    "\\public\\js",
     "\\routes",
     "\\sass",
     "\\views"
   ],
-  "SelectedNode": "\\js\\min\\app-min.js",
+  "SelectedNode": "\\views\\contact.pug",
   "PreviewInSolutionExplorer": false
 }
