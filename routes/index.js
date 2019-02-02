@@ -98,11 +98,12 @@ router.get('/registrations', (req, res) => {
 router.get('/', (req, res) => {
     var fullDate = new Date();
     var twoDigitMonth = ((fullDate.getMonth().length + 1) === 1) ? (fullDate.getMonth() + 1) : '0' + (fullDate.getMonth() + 1);
-
-    var currentDate = fullDate.getFullYear() + "-" + twoDigitMonth + "-" + fullDate.getDate();
+    var twoDigitDate = ((fullDate.getDate().length + 1) === 1) ? (fullDate.getDate() + 1) : '0' + (fullDate.getDate());
+    var currentDate = fullDate.getFullYear() + "-" + twoDigitMonth + "-" + twoDigitDate;
    
+    
     Upload.find({ date: { $gte: currentDate } }).sort({ date: 1 }).exec(function (err, uploadsResults) {
-        
+        console.log(uploadsResults);
         let date = uploadsResults[0];
                                                          
         if (err) {
@@ -111,7 +112,7 @@ router.get('/', (req, res) => {
             res.render('index', { 'events': uploadsResults });
            
         } else {
-            res.send('no documents found');
+            res.send('no events found');
         }
     });
 });
@@ -127,11 +128,14 @@ router.get('/:id/delete', (req, res) => {
 
 router.get('/test', (req, res) => {
     var fullDate = new Date();
+
     var twoDigitMonth = ((fullDate.getMonth().length + 1) === 1) ? (fullDate.getMonth() + 1) : '0' + (fullDate.getMonth() + 1);
 
     var currentDate = fullDate.getFullYear() + "-" + twoDigitMonth + "-" + fullDate.getDate();
-    console.log(currentDate);
-    Upload.find({ $orderby: { date: -1 } },function (err, uploadsResults){
+    var test = "2019-02-02";
+    console.log(test);
+
+    Upload.find({ date: { $gte: test } }).sort({ date: 1}).exec(function (err, uploadsResults){
         console.log('sorting  ' + uploadsResults);
         res.render('form');
     });
