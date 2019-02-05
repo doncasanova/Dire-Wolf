@@ -1,15 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\js",
-    "\\js\\min",
-    "\\public",
-    "\\public\\css",
-    "\\public\\images",
-    "\\routes",
-    "\\sass",
     "\\views"
   ],
-  "SelectedNode": "\\js\\min\\app-min.js",
+  "SelectedNode": "\\views\\index.pug",
   "PreviewInSolutionExplorer": false
 }
