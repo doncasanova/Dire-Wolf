@@ -1,22 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-<<<<<<< HEAD
-    "\\views"
+    "\\routes"
   ],
-  "SelectedNode": "\\views\\index.pug",
-=======
-    "\\js",
-    "\\js\\min",
-    "\\public",
-    "\\public\\css",
-    "\\public\\images",
-    "\\public\\js",
-    "\\routes",
-    "\\sass",
-    "\\views"
-  ],
-  "SelectedNode": "\\views\\layout.pug",
->>>>>>> b6446548895a820074f7f3059fc7f7fc7fc1de32
+  "SelectedNode": "\\routes\\index.js",
   "PreviewInSolutionExplorer": false
 }

@@ -160,7 +160,7 @@ const dummyObject = [{
     date: '2050-01-01',
     time: '17:00',
     url: '',
-    description: 'Dons on Vacation'
+    description: 'We are in between sets. Check back often.'
 }];
 
 
