@@ -2,11 +2,7 @@
   "ExpandedNodes": [
     "",
     "\\js",
-    "\\js\\min",
-    "\\public",
-    "\\public\\css",
-    "\\public\\images",
-    "\\public\\js",
+    "\\models",
     "\\routes",
     "\\sass",
     "\\views"
