@@ -103,9 +103,11 @@ router.get('/', (req, res) => {
    
     
     Upload.find({ date: { $gte: currentDate } }).sort({ date: 1 }).exec(function (err, uploadsResults) {
-        console.log(uploadsResults);
-        let date = uploadsResults[0];
-                                                         
+        //loads a dummy object in the event there are no events
+        if (uploadsResults.length <= 0) {
+            uploadsResults = dummyObject;
+        }
+        //console.log(uploadsResults);
         if (err) {
             res.send(err);
         } else if (uploadsResults.length) {
@@ -127,22 +129,23 @@ router.get('/:id/delete', (req, res) => {
 
 
 router.get('/test', (req, res) => {
+    console.log("This is the dummy " + dummyObject[0].date);
     var fullDate = new Date();
 
     var twoDigitMonth = ((fullDate.getMonth().length + 1) === 1) ? (fullDate.getMonth() + 1) : '0' + (fullDate.getMonth() + 1);
 
     var currentDate = fullDate.getFullYear() + "-" + twoDigitMonth + "-" + fullDate.getDate();
     var test = "2019-02-02";
-    console.log(test);
+    //console.log(test);
 
     Upload.find({ date: { $gte: test } }).sort({ date: 1}).exec(function (err, uploadsResults){
-        console.log('sorting  ' + uploadsResults);
+        //console.log('sorting  ' + uploadsResults);
         res.render('form');
     });
 
 
     Upload.find().sort({ date: -1 }).exec(function (err, cursor) {
-        console.log('new ' + cursor);
+        //console.log('new ' + cursor);
 
     });
     
@@ -150,6 +153,16 @@ router.get('/test', (req, res) => {
     
     
 });
+
+const dummyObject = [{
+    name: 'Events comming soon',
+    address: 'Lino Lakes',
+    date: '2050-01-01',
+    time: '17:00',
+    url: '',
+    description: 'Dons on Vacation'
+}];
+
 
 module.exports = router;
 
