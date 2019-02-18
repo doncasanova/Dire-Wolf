@@ -2171,6 +2171,7 @@ body {
     /* line 22, sass/layout/_footer.scss */
     .site-footer .newsletter-form input[type="email"] {
         width: 70%;
+        text-size-adjust: 50%;
     }
     .site-footer .newsletter-form input[type="name"] {
         width: 70%;
