@@ -61,7 +61,7 @@ router.post('/',
 
             emailList.save()
             .then(() => {
-                res.render('login', { title: 'Login form', pageHeader: 'Login Page', thankYou: 'Thank you for your registration!' });
+                res.render('about', { title: 'Login form', pageHeader: 'Login Page', thankYou: 'Thank you for your registration!' });
 
             })
             .catch(() => { res.send('Sorry! Something went wrong.'); });
