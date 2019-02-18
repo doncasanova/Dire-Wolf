@@ -14,6 +14,7 @@ mongoose.connection
     });
 
 require('./models/upLoad');
+require('./models/emailList');
 
 const app = require('./app');
 

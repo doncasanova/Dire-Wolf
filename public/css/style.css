@@ -2148,7 +2148,7 @@ body {
     /* line 22, sass/layout/_footer.scss */
     .site-footer .newsletter-form input[type="email"] {
       width: 80%;
-      padding: 25px;
+      /*padding: 10px;*/
       border: none;
       float: left;
       background: #353535;
@@ -2156,17 +2156,34 @@ body {
       outline: none;
       -webkit-transition: .3s ease;
               transition: .3s ease; }
-      @media screen and (max-width: 480px) {
-        /* line 22, sass/layout/_footer.scss */
-        .site-footer .newsletter-form input[type="email"] {
-          width: 70%; } }
+    .site-footer .newsletter-form input[type="name"] {
+        width: 80%;
+        /*padding: 10px;*/
+        border: none;
+        float: left;
+        background: #353535;
+        color: white;
+        outline: none;
+        -webkit-transition: .3s ease;
+        transition: .3s ease;
+    }
+@media screen and (max-width: 480px) {
+    /* line 22, sass/layout/_footer.scss */
+    .site-footer .newsletter-form input[type="email"] {
+        width: 70%;
+    }
+    .site-footer .newsletter-form input[type="name"] {
+        width: 70%;
+    } }
       /* line 33, sass/layout/_footer.scss */
       .site-footer .newsletter-form input[type="email"]:hover, .site-footer .newsletter-form input[type="email"]:focus {
         background: #4f4f4f; }
+      .site-footer .newsletter-form input[type="name"]:hover, .site-footer .newsletter-form input[type="name"]:focus {
+    background: #4f4f4f; }
     /* line 37, sass/layout/_footer.scss */
     .site-footer .newsletter-form input[type="submit"] {
       width: 20%;
-      padding: 25px; }
+      padding: 28px; }
       @media screen and (max-width: 480px) {
         /* line 37, sass/layout/_footer.scss */
         .site-footer .newsletter-form input[type="submit"] {

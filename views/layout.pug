@@ -38,7 +38,7 @@
 			</header> <!-- .site-header -->
 
 			block content
-
+			-data = data || {}
 
 			<footer class="site-footer">
 				<div class="container">
@@ -49,11 +49,41 @@
 						<a href="mailto:DakotaCloverBand@gmail.com">DakotaCloverBand@gmail.com</a></p> 
 					</address> 
 					
-					<form action="#" class="newsletter-form">
-						<input type="email" placeholder="Enter your email to join newsletter...">
-						<input type="submit" class="button cut-corner" value="Subscribe">
-					</form> <!-- .newsletter-form -->
-					
+					<!-- <form action="." method="POST" class="newsletter-form">
+						<input value=data.email id="email" type="email" email="email" placeholder="Enter your email to join newsletter..."></input>
+						<input type="submit" class="button cut-corner" value="Subscribe"></input>
+					</form> -->
+					<!-- .newsletter-form -->
+					if errors
+						ul.my-errors
+							for error in errors
+								li= error.msg
+					<div class = "row d-flex justify-content-center">
+					<div class = "col-6">
+					form(action="." method="POST" class="newsletter-form")
+						input(
+							placeholder="Enter your name to join newsletter..."
+							type="name"
+							id="name"
+							name="name"
+							class="form-control"
+							value=data.name
+						)
+						input(
+							placeholder="Enter your email to join newsletter..."
+							type="email"
+							id="email"
+							name="email"
+							class="form-control"
+							value=data.email
+						)
+						input(
+							type="submit"
+							value="Submit"
+							class="button cut-corner"
+						)
+					</div>
+					</div>
 					<div class="social-links">
 						<a href="https://www.facebook.com/pages/category/Musician-Band/Dakota-Clover-447137792072817/"><i class="fa fa-facebook-square"></i></a>
 						//<a href="#"><i class="fa fa-twitter"></i></a>

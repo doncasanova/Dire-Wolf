@@ -4,23 +4,13 @@ const bcrypt = require('bcrypt-nodejs');
 const { body, validationResult } = require('express-validator/check');
 const router = express.Router();
 const Upload = mongoose.model('Upload');
+const EmailList = mongoose.model('EmailList');
 const path = require('path');
 const auth = require('http-auth');
 const basic = auth.basic({
     file: path.join(__dirname, '../users.htpasswd')
 });
 
-//router.get('/', (req, res) => {
-    
-//    Upload.find()
-//        .then((uploads) => {
-//            events = uploads[0];
-//            console.log(events);
-//            res.render('index', { title: 'Listing registrations', events });
-//        })
-//        .catch(() => { res.send('Sorry! Something went wrong.'); });
-
-//});
 
 router.get('/about', (req, res) => {
     res.render('about');
@@ -51,9 +41,37 @@ router.get('/form', (req, res) => {
     res.render('form');
 
 });
-
+//email list
 router.post('/',
+    
+    [
+        body('name')
+            .isLength({ min: 1 })
+            .withMessage('Please enter your name'),
+        body('email')
+        .isLength({ min: 1 })
+        .withMessage('Please enter an email address')
+    ],
 
+        (req, res) => {
+        let event = req.body;
+        console.log(req.body);
+
+            let emailList = new EmailList(req.body);
+
+            emailList.save()
+            .then(() => {
+                res.render('login', { title: 'Login form', pageHeader: 'Login Page', thankYou: 'Thank you for your registration!' });
+
+            })
+            .catch(() => { res.send('Sorry! Something went wrong.'); });
+
+    }
+
+);
+//event post route
+router.post('/',
+   
     [
         body('name')
             .isLength({ min: 1 })
@@ -63,10 +81,10 @@ router.post('/',
             .withMessage('Please enter an email'),
         body('date')
             .isLength({ min: 1 })
-            .withMessage('Please enter an password'),
+            .withMessage('Please enter an date'),
         body('time')
             .isLength({ min: 1 })
-            .withMessage('Please enter an passwordConf')
+            .withMessage('Please enter an time')
     ],
 
     (req, res) => {
@@ -102,7 +120,7 @@ router.get('/', (req, res) => {
     if (fullDate.getDate() >= 10) {
         var currentDate = fullDate.getFullYear() + "-" + twoDigitMonth + "-" + fullDate.getDate();
     } else {
-        var currentDate = fullDate.getFullYear() + "-" + twoDigitMonth + "-" + twoDigitDate;
+        currentDate = fullDate.getFullYear() + "-" + twoDigitMonth + "-" + twoDigitDate;
     }
 
     Upload.find({ date: { $gte: currentDate } }).sort({ date: 1 }).exec(function (err, uploadsResults) {
@@ -158,12 +176,21 @@ router.get('/test', (req, res) => {
 });
 
 const dummyObject = [{
+    name: 'Your Event Here',
+    address: 'Lino Lakes',
+    date: '2050-01-01',
+    time: '17:00',
+    url: '',
+    description: 'Gives us a call.  (651)429-4494'
+},
+    {
     name: 'Events comming soon',
     address: 'Lino Lakes',
     date: '2050-01-01',
     time: '17:00',
     url: '',
     description: 'We are in between sets. Check back often.'
+
 }];
 
 
