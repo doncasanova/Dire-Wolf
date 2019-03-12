@@ -42,7 +42,7 @@ router.get('/form', (req, res) => {
 
 });
 //email list
-router.post('/',
+router.post('/email',
     
     [
         body('name')
@@ -112,7 +112,9 @@ router.get('/registrations', (req, res) => {
         })
         .catch(() => { res.send('Sorry! Something went wrong.'); });
 });
+//--------------------------------------------------------------------------------------
 
+//sends events to frontend by sorting relative to current date.  
 router.get('/', (req, res) => {
     var fullDate = new Date();
     var twoDigitMonth = ((fullDate.getMonth().length + 1) === 1) ? (fullDate.getMonth() + 1) : '0' + (fullDate.getMonth() + 1);
@@ -139,7 +141,9 @@ router.get('/', (req, res) => {
         }
     });
 });
+//-----------------------------------------------------------------------------------------
 
+//delete events by id
 router.get('/:id/delete', (req, res) => {
     console.log("in delete");
     Upload.findByIdAndDelete(req.params.id, function (err) {
@@ -147,8 +151,9 @@ router.get('/:id/delete', (req, res) => {
         res.render('delete');
     });
 });
+//-------------------------------------------------------------------------------------------
 
-
+//test route for when working on rendering to front end.
 router.get('/test', (req, res) => {
     console.log("This is the dummy " + dummyObject[0].date);
     var fullDate = new Date();
@@ -169,12 +174,10 @@ router.get('/test', (req, res) => {
         //console.log('new ' + cursor);
 
     });
-    
-        
-    
-    
 });
+//-------------------------------------------------------------------------------------------
 
+// object for when no events are scheduled 
 const dummyObject = [{
     name: 'Your Event Here',
     address: 'Lino Lakes',
