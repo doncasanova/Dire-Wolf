@@ -1,0 +1,11 @@
+extends layout
+
+block content
+	<div class="text-centered">
+		h1.text-white Heres your e-mail contacts.
+	</div>
+		each value in emailList
+			<div>	
+				p.text-white #{value.name}
+				<a class ="text-white" href = "#{value.email}">#{value.email}</a>
+			</div>
