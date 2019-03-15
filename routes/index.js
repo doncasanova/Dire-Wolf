@@ -177,12 +177,12 @@ router.get('/test', (req, res) => {
 });
 
 //-------------------------------------------------------------------------------------------
-// test for getting email list
+// get email list
 router.get('/get-email', (req, res) => {
 
     EmailList.find()
         .then((emailList) => {
-            console.log(emailList);
+            //console.log(emailList);
             res.render('emailList', { title: 'Listing registrations', emailList });
         })
         .catch(() => { res.send('Sorry! Something went wrong.'); });
