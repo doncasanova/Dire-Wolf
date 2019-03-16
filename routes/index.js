@@ -69,6 +69,21 @@ router.post('/email',
     }
 
 );
+//-------------------------------------------------------------------------------------------
+// get email list
+router.get('/get-email', (req, res) => {
+
+    EmailList.find()
+        .then((emailList) => {
+            //console.log(emailList);
+            res.render('emailList', { title: 'Listing registrations', emailList });
+        })
+        .catch(() => { res.send('Sorry! Something went wrong.'); });
+
+
+});
+//-------------------------------------------------------------------------
+
 //event post route
 router.post('/',
    
@@ -174,22 +189,18 @@ router.get('/test', (req, res) => {
         //console.log('new ' + cursor);
 
     });
-});
-
+}); 
 //-------------------------------------------------------------------------------------------
-// get email list
-router.get('/get-email', (req, res) => {
 
-    EmailList.find()
-        .then((emailList) => {
-            //console.log(emailList);
-            res.render('emailList', { title: 'Listing registrations', emailList });
+// list all events
+router.get('/all-events', (req, res) => {
+    Upload.find()
+        .then((allEvents) => {
+            console.log(allEvents);
+            res.render('listAllEvents', { title: 'Listing registrations', allEvents });
         })
         .catch(() => { res.send('Sorry! Something went wrong.'); });
-
-
 });
-
 
 //-------------------------------------------------------------------------------------------
 // object for when no events are scheduled 
