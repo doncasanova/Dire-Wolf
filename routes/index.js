@@ -201,9 +201,42 @@ router.get('/all-events', (req, res) => {
         })
         .catch(() => { res.send('Sorry! Something went wrong.'); });
 });
-
 //-------------------------------------------------------------------------------------------
-// object for when no events are scheduled 
+
+// list event for update
+router.get('/:id/event', (req, res) => {
+    Upload.findById(req.params.id)
+        .then((updateEvent) => {
+            console.log(updateEvent);
+            res.render('update-event', { title: 'Listing registrations', updateEvent });
+        })
+        .catch(() => { res.send('Sorry! Something went wrong.'); });
+});
+
+
+
+
+    //console.log("in get event");
+    //Upload.findById(req.params.id, function (err) {
+    //    if (err) return next(err);
+    //    res.render('showEvent', { event });
+    //    console.log(event);
+    //});
+
+//});
+//-------------------------------------------------------------------------------------------
+
+//delete events by id
+router.get('/:id', (req, res) => {
+    console.log("in delete");
+    Upload.findByIdAndDelete(req.params.id, function (err) {
+        if (err) return next(err);
+        res.render('delete');
+    });
+});
+//-------------------------------------------------------------------------------------------
+
+// object for when no events are scheduled
 const dummyObject = [{
     name: 'Your Event Here',
     address: 'Lino Lakes',
@@ -226,5 +259,14 @@ const dummyObject = [{
 module.exports = router;
 
 
+//newFunction();
 
 
+
+function newFunction() {
+    $(document).ready(function() {
+        $(".delete").click(function() {
+            alert("button");
+        });
+    });
+}

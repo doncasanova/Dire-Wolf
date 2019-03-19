@@ -1,0 +1,82 @@
+extends layout
+
+block content
+  -data = data || {}
+
+  if errors
+    ul.my-errors
+      for error in errors
+        li= error.msg
+  <div class = "row">
+  <div class = "col-12 col-sm-6">
+  form(action="." method="POST" class="form-registration mr-2 ml-2")
+    
+    label(for="name") Name:
+    input(
+      type="text"
+      id="name"
+      name="name"
+      class="form-control"
+      value=data.name
+    )
+
+    label(for="adderss") Address:
+    input(
+      type="address"
+      id="address"
+      name="address"
+      class="form-control"
+      value=data.address
+    )
+    
+    label(for="date") Date:
+    input(
+      type="date"
+      id="date"
+      name="date"
+      class="form-control"
+      value=data.date
+    )
+
+    label(for="time") Time:
+    input(
+      type="time"
+      id="time"
+      name="time"
+      class="form-control"
+      value=data.time
+    )
+
+    label(for="url") Web site:
+    input(
+      type="url"
+      id="url"
+      name="url"
+      class="form-control"
+      value=data.url
+    )
+
+    label(for="description") Description:
+    textarea(
+	  type="text"
+	  id="description"
+	  name="description"
+	  class="form-control"
+	  value=data.description
+	  )
+
+    input(
+      type="submit"
+      value="Submit"
+      class="btn btn-lg btn-primary btn-block mt-1"
+    )
+    </div>
+    <div class="col-12 col-sm-6 ">
+    <h2 class="text-white">Event Details</h2>
+    <p class="text-white"> #{updateEvent.name}</p>
+    <p class="text-white"> #{updateEvent.date}</p>
+    <p class="text-white"> #{updateEvent.time}</p>
+    <p class="text-white"> #{updateEvent.url}</p>
+    <p class="text-white"> #{updateEvent.description}</p>
+    </div>
+    </div>
