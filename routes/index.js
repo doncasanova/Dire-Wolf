@@ -156,16 +156,7 @@ router.get('/', (req, res) => {
         }
     });
 });
-//-----------------------------------------------------------------------------------------
 
-//delete events by id
-router.get('/:id/delete', (req, res) => {
-    console.log("in delete");
-    Upload.findByIdAndDelete(req.params.id, function (err) {
-        if (err) return next(err);
-        res.render('delete');
-    });
-});
 //-------------------------------------------------------------------------------------------
 
 //test route for when working on rendering to front end.
@@ -207,23 +198,10 @@ router.get('/all-events', (req, res) => {
 router.get('/:id/event', (req, res) => {
     Upload.findById(req.params.id)
         .then((updateEvent) => {
-            console.log(updateEvent);
             res.render('update-event', { title: 'Listing registrations', updateEvent });
         })
         .catch(() => { res.send('Sorry! Something went wrong.'); });
 });
-
-
-
-
-    //console.log("in get event");
-    //Upload.findById(req.params.id, function (err) {
-    //    if (err) return next(err);
-    //    res.render('showEvent', { event });
-    //    console.log(event);
-    //});
-
-//});
 //-------------------------------------------------------------------------------------------
 
 //delete events by id
@@ -236,6 +214,15 @@ router.get('/:id', (req, res) => {
 });
 //-------------------------------------------------------------------------------------------
 
+//update events by id
+router.post('/:id/update', (req, res) => {
+    console.log("in update");
+    Upload.findById(req.params.id, function (err, doc) {
+        doc.name = 'don';
+
+        doc.save();
+    });
+});
 // object for when no events are scheduled
 const dummyObject = [{
     name: 'Your Event Here',
