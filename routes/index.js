@@ -217,10 +217,11 @@ router.get('/:id', (req, res) => {
 //update events by id
 router.post('/:id/update', (req, res) => {
     console.log("in update");
-    Upload.findById(req.params.id, function (err, doc) {
-        doc.name = 'don';
+    Upload.Update(req.params.id, function (err, doc) {
+        console.log(doc);
+        //doc.name = 'thia';
 
-        doc.save();
+        //doc.save();
     });
 });
 // object for when no events are scheduled
