@@ -132,12 +132,17 @@ router.get('/registrations', (req, res) => {
 //sends events to frontend by sorting relative to current date.  
 router.get('/', (req, res) => {
     var fullDate = new Date();
-    var twoDigitMonth = ((fullDate.getMonth().length + 1) === 1) ? (fullDate.getMonth() + 1) : '0' + (fullDate.getMonth() + 1);
-    var twoDigitDate = ((fullDate.getDate().length + 1) === 1) ? (fullDate.getDate() + 1) : '0' + (fullDate.getDate());
+    
+    var twoDigitMonth = ((fullDate.getMonth().length + 1) === 1) ? (fullDate.getMonth() + 1) : (fullDate.getMonth() + 1);
+    var twoDigitDate = ((fullDate.getDate().length + 1) === 1) ? (fullDate.getDate() + 1) : (fullDate.getDate());
+
+
     if (fullDate.getDate() >= 10) {
         var currentDate = fullDate.getFullYear() + "-" + twoDigitMonth + "-" + fullDate.getDate();
+        console.log("test  " +currentDate);
     } else {
         currentDate = fullDate.getFullYear() + "-" + twoDigitMonth + "-" + twoDigitDate;
+
     }
 
     Upload.find({ date: { $gte: currentDate } }).sort({ date: 1 }).exec(function (err, uploadsResults) {
