@@ -2,6 +2,7 @@
   "ExpandedNodes": [
     "",
     "\\images",
+    "\\models",
     "\\public",
     "\\public\\css",
     "\\public\\js",
@@ -9,6 +10,6 @@
     "\\sass",
     "\\views"
   ],
-  "SelectedNode": "\\public\\js\\plugins.js",
+  "SelectedNode": "\\routes\\index.js",
   "PreviewInSolutionExplorer": false
 }
