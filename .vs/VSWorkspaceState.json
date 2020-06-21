@@ -1,15 +1,17 @@
 {
   "ExpandedNodes": [
     "",
-    "\\images",
     "\\models",
     "\\public",
     "\\public\\css",
+    "\\public\\css\\test",
+    "\\public\\images",
     "\\public\\js",
     "\\routes",
     "\\sass",
-    "\\views"
+    "\\sass\\libs",
+    "\\sass\\pages"
   ],
-  "SelectedNode": "\\server.js",
+  "SelectedNode": "\\views\\update-event.pug",
   "PreviewInSolutionExplorer": false
 }
