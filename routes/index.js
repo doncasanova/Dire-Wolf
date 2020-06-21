@@ -142,12 +142,13 @@ router.get('/', (req, res) => {
         var currentDate = fullDate.getFullYear() + "-" + twoDigitMonth + "-" + fullDate.getDate();
         //console.log("test  " +currentDate);
     } else {
-        currentDate = fullDate.getFullYear() + "- 0" + twoDigitMonth + "-" + twoDigitDate;
+        currentDate = fullDate.getFullYear() + "-0" + twoDigitMonth + "-" + fullDate.getDate();
         //console.log("test  " + currentDate);
     }
-    //console.log("upload events  " + currentDate);
+    console.log("upload events  " + currentDate);
 
     Upload.find({ date: { $gte: currentDate } }).sort({ date: 1 }).exec(function (err, uploadsResults) {
+        console.log("inside sort");
         //loads a dummy object in the event there are no events
         if (uploadsResults.length <= 0) {
             uploadsResults = dummyObject;
