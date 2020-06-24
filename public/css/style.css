@@ -10,7 +10,8 @@ hgroup,
 nav,
 section,
 summary {
-  display: block; }
+    display: block;
+}
 
 /* line 61, sass/libs/_normalize.scss */
 audio,
@@ -2719,3 +2720,7 @@ body {
         color: #fd5927; }
 
 /*# sourceMappingURL=style.css.map */
+
+.lazy-bg {
+    padding-bottom:200px;
+}

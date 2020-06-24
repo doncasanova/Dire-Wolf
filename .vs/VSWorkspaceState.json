@@ -1,17 +1,14 @@
 {
   "ExpandedNodes": [
     "",
-    "\\models",
     "\\public",
     "\\public\\css",
-    "\\public\\css\\test",
     "\\public\\images",
+    "\\public\\images\\band_mates",
+    "\\public\\images\\corporate",
     "\\public\\js",
-    "\\routes",
-    "\\sass",
-    "\\sass\\libs",
-    "\\sass\\pages"
+    "\\views"
   ],
-  "SelectedNode": "\\views\\update-event.pug",
+  "SelectedNode": "\\public\\css\\style.css",
   "PreviewInSolutionExplorer": false
 }

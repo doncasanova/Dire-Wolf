@@ -2,35 +2,63 @@ extends layout
 
 block content
 
+		<div class="modal fade" id="largeModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<div id="myModalLabel" class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span class="mr-2" aria-hidden="true">&times;</span>
+						</button>
+							</div>
+						<div class="modal-body  d-flex justify-content-center">
+						<div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
+							<div class="carousel-inner insertImagesModalBandMate insertImagesBandMate">
+								</div>
+								<a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
+								<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+									<span class="sr-only">Previous</span>
+									</a>
+								<a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
+								<span class="carousel-control-next-icon" aria-hidden="true"></span>
+									<span class="sr-only">Next</span>
+									</a>
+								</div>
+							</div>
+						<div class="modal-footer">
+						<button id="modalButton" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+							</div>
+						</div>
+					</div>
+				</div>
 
 			<main class="main-content">
 				<div class="fullwidth-block why-chooseus-section">
 					<div class="container">
-						<h2 class="section-title">Why choose us?</h2>
+						<h2 class="section-title text-center">Image Gallery</h2>
 
 						<div class="row">
 							<div class="col-md-4">
 								<div class="feature">
-									<figure class="cut-corner">
-										<img src="https://scontent.ffcm1-1.fna.fbcdn.net/v/t1.0-9/35407471_1644186992367885_7132266019367682048_n.jpg?_nc_cat=105&_nc_ht=scontent.ffcm1-1.fna&oh=144cf16d176c037c77c9fd5704326363&oe=5C90F42A" alt="">
+								<h3 class="feature-title">Band Mates</h3>
+									<figure class="insertImagesHere">
+										
 									</figure>
-									<h3 class="feature-title">Elderly Care</h3>
 								</div> <!-- .feature -->
 							</div>
 							<div class="col-md-4">
 								<div class="feature">
-									<figure class="cut-corner">
-										<img src="https://scontent.ffcm1-2.fna.fbcdn.net/v/t1.0-9/25445998_1458400024279917_815193772089642815_n.jpg?_nc_cat=108&_nc_ht=scontent.ffcm1-2.fna&oh=0a2dbcbdefc71b1567c7c3ff2cacd5bf&oe=5C93F362" alt="">
+								<h3 class="feature-title">Wineries and Small Venues</h3>
+									<figure class="insertWineryImagesHere">
+										
 									</figure>
-									<h3 class="feature-title">Wineries and Small Venues</h3>
 								</div> <!-- .feature -->
 							</div>
 							<div class="col-md-4">
 								<div class="feature">
-									<figure class="cut-corner">
-										<img src="https://scontent.ffcm1-2.fna.fbcdn.net/v/t1.0-9/22196067_1390717244381529_761672453259035627_n.jpg?_nc_cat=104&_nc_ht=scontent.ffcm1-2.fna&oh=ad55736a21fe4f9dfd94e315f1a630ef&oe=5CC9FAB6" alt="">
+								<h3 class="feature-title">Corporate Events</h3>
+									<figure class="insertCorporateImagesHere">
+										
 									</figure>
-									<h3 class="feature-title">Corporate Events</h3>
 								</div> <!-- .feature -->
 							</div>
 						</div>
@@ -42,5 +70,7 @@ block content
 					<script src="js/jquery-1.11.1.min.js"></script>
 					<script src="js/plugins.js"></script>
 					<script src="js/app.js"></script>
+					<script src="js/pic_dynamic.js"></script>
+					
 					
 
