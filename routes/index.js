@@ -142,7 +142,7 @@ router.get('/', (req, res) => {
         var currentDate = fullDate.getFullYear() + "-" + twoDigitMonth + "-" + fullDate.getDate();
         //console.log("test  " +currentDate);
     } else {
-        currentDate = fullDate.getFullYear() + "-0" + twoDigitMonth + "-" + fullDate.getDate();
+        currentDate = fullDate.getFullYear() + "-0" + twoDigitMonth + "-0" + fullDate.getDate();
         //console.log("test  " + currentDate);
     }
     console.log("upload events  " + currentDate);
