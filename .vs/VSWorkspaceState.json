@@ -3,11 +3,10 @@
     "",
     "\\public",
     "\\public\\css",
-    "\\public\\images\\wineries",
     "\\public\\js",
     "\\routes",
     "\\views"
   ],
-  "SelectedNode": "\\routes\\index.js",
+  "SelectedNode": "\\views\\index.pug",
   "PreviewInSolutionExplorer": false
 }
