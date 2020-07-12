@@ -133,19 +133,24 @@ router.get('/registrations', (req, res) => {
 router.get('/', (req, res) => {
     //console.log("inside get events");
     var fullDate = new Date();
+    var day = fullDate.getDate(); //day of the month
+    var month = fullDate.getMonth() + 1; //month of year
+    var year = fullDate.getUTCFullYear(); //year
+
+    if (day < 10) {
+        day = ("0" + day); 
+    };
+
+    if (month < 10) {
+        month = ("0" + month);
+    };
+
+    //console.log("test full date " + fullDate);
+    //console.log("test year " + year + "-" + month + "-" + day);
+
+    var currentDate = (year + "-" + month + "-" + day);
     
-    var twoDigitMonth = ((fullDate.getMonth().length + 1) === 1) ? (fullDate.getMonth() + 1) : (fullDate.getMonth() + 1);
-    var twoDigitDate = ((fullDate.getDate().length + 1) === 1) ? (fullDate.getDate() + 1) : (fullDate.getDate());
-    
-    //fullDate.getDate()
-    if (twoDigitMonth >= 10) {
-        var currentDate = fullDate.getFullYear() + "-" + twoDigitMonth + "-" + fullDate.getDate();
-        //console.log("test  " +currentDate);
-    } else {
-        currentDate = fullDate.getFullYear() + "-0" + twoDigitMonth + "-0" + fullDate.getDate();
-        //console.log("test  " + currentDate);
-    }
-    console.log("upload events  " + currentDate);
+    //console.log("upload events  " + currentDate);
 
     Upload.find({ date: { $gte: currentDate } }).sort({ date: 1 }).exec(function (err, uploadsResults) {
         console.log("inside sort");
