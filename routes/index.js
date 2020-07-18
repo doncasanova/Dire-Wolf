@@ -22,6 +22,8 @@ router.get('/gallery', (req, res) => {
 
 });
 
+
+
 router.get('/download', (req, res) => {
     res.render('download');
 
@@ -164,6 +166,38 @@ router.get('/', (req, res) => {
         } else if (uploadsResults.length) {
             res.render('index', { 'events': uploadsResults });
            
+        } else {
+            res.send('no events found');
+        }
+    });
+});
+
+//-------------------------------------------------------------------------------
+
+//sends past events to frontend by sorting relative to current date.  
+router.get('/past-events', (req, res) => {
+    console.log("inside past-events");
+    var fullDate = new Date();
+    var day = fullDate.getDate(); //day of the month
+    var month = fullDate.getMonth() + 1; //month of year
+    var year = fullDate.getUTCFullYear(); //year
+
+    var currentDate = (year + "-" + month + "-" + day);
+
+    console.log("upload events  " + currentDate);
+
+    Upload.find({ date: { $lt: currentDate } }).sort({ date: 1 }).exec(function (err, uploadsResults) {
+        console.log("inside sort past events");
+        //loads a dummy object in the event there are no events
+        if (uploadsResults.length <= 0) {
+            uploadsResults = dummyObject;
+        }
+        //console.log(uploadsResults);
+        if (err) {
+            res.send(err);
+        } else if (uploadsResults.length) {
+            res.render('past-events', { 'events': uploadsResults });
+
         } else {
             res.send('no events found');
         }

@@ -2722,5 +2722,6 @@ body {
 /*# sourceMappingURL=style.css.map */
 
 .lazy-bg {
-    padding-bottom:200px;
+    padding-bottom: 200px;
+    background-size: auto;
 }

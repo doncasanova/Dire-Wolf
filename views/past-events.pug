@@ -1,0 +1,140 @@
+extends layout
+
+block content
+	<main class="main-content">
+
+			
+			<div class="fullwidth-block why-chooseus-section">
+			
+
+				
+
+
+			
+				
+
+				<div class="fullwidth-block upcoming-event-section" data-bg-color="#191919">
+					<div class="container">
+						<header class="section-header">
+							<h2 class="section-title">Past events</h2>
+							<br/>
+							<ul class="list-inline justify-content-center">
+						<li class="list-inline-item">
+						<h2 class="eventCom">Let us book your next event
+						</li>
+						<li class="list-inline-item">
+						<a class="phoneNum" href="tel:6514294494">  (651)-429-4494</a>
+						</li>
+						</ul>
+
+							<div class="event-nav">
+							
+								<a class="prev" id="event-prev" href="#"><i class="fa fa-caret-left"></i></a>
+								<a class="next" id="event-next" href="#"><i class="fa fa-caret-right"></i></a>
+								</div>
+							<!-- .event-nav -->
+
+						</header> <!-- .section-header -->
+						
+						<div class="event-carousel">
+
+								each value in events
+									- var month = value.date.substring(5,7)
+									- var day = value.date.substring(8,10)
+									- var hour = value.time.substring(0,2)													
+									- var PM = "pm"
+										<div class="event">
+											<div class="entry-date">
+												case month
+													when '12'
+														h1-date Dec
+													when '11'
+														h1-date Nov
+													when '10'
+														h1-date Oct
+													when '09'
+														h1-date Sept
+													when '08'
+														h1-date Aug
+													when '07'
+														h1-date July
+													when '06'
+														h1-date June
+													when '05'
+														h1-date May
+													when '04'
+														h1-date Apr
+													when '03'
+														h1-date Mar
+													when '02'
+														h1-date Feb
+													when '01'
+														h1-date Jan
+													default
+														p Missing the month
+												<div class="date"> #{day}</div>
+												if hour > 12
+													<div> #{hour-12}:#{value.time.substring(3,5)}pm</div>
+												else
+													<div> #{hour}:#{value.time.substring(3,5)}am</div>
+											</div>
+											<div>
+												h2.text-white #{value.name}
+												h3.text-white #{value.description}
+											</div>
+											<a href= "#{value.url}">#{value.name}</a>
+										</div> <!-- .event -->		
+										
+								else
+									td There are no values
+						
+							
+						</div> <!-- .event-carousel -->
+					</div> <!-- .container -->
+				</div> <!-- .upcoming-event-section -->
+
+				<div class="fullwidth-block why-chooseus-section">
+					<div class="container">
+						<h2 class="section-title">Why choose us?</h2>
+
+						<div class="row">
+							<div class="col-md-4">
+								<div class="feature">
+									<figure class="cut-corner">
+										<img src="/images/small-venu.png" alt="gig">
+									</figure>
+									<h3 class="feature-title">Small Private Intimate Venues</h3>
+									<p>We work with you to bring the very best entertainment.</p>
+								</div> <!-- .feature -->
+							</div>
+							<div class="col-md-4">
+								<div class="feature">
+									<figure class="cut-corner">
+										<img src="images/wineries/Thanksgiving and Northfolk 2018 037.jpg" alt="northfolk winery">
+									</figure>
+									<h3 class="feature-title">Small Group Gatherings</h3>
+									<p>Something here about smaller venues</p>
+								</div> <!-- .feature -->
+							</div>
+							<div class="col-md-4">
+								<div class="feature">
+									<figure class="cut-corner">
+										<img src="images/corporate/IMG_1919.jpg" alt="tomato festival">
+									</figure>
+									<h3 class="feature-title">Weddings and Large corporate events</h3>
+									<p>Something here about large events</p>
+								</div> <!-- .feature -->
+							</div>
+						</div>
+					</div> <!-- .container -->
+				</div> <!-- .why-chooseus-section -->
+			</main> <!-- .main-content -->
+
+		
+			</div>	<!-- #site-content -->
+
+			<script src="js/jquery-1.11.1.min.js"></script>
+			<script src="js/plugins.js"></script>
+			<script src="js/app.js"></script>
+			<script src="js/New File.js"></script>
+
