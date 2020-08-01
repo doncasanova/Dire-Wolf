@@ -1,12 +1,13 @@
 {
   "ExpandedNodes": [
     "",
-    "\\dummy\\large-gallery",
     "\\public",
     "\\public\\css",
     "\\public\\images",
+    "\\public\\images\\video_images",
+    "\\routes",
     "\\views"
   ],
-  "SelectedNode": "\\public\\images\\dakota3@2x.jpg",
+  "SelectedNode": "\\public\\images\\video_images\\nights-in-white-satin.jpg",
   "PreviewInSolutionExplorer": false
 }
