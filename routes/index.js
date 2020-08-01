@@ -22,6 +22,10 @@ router.get('/gallery', (req, res) => {
 
 });
 
+router.get('/live-videos', (req, res) => {
+    res.render('live-videos');
+
+});
 
 
 router.get('/download', (req, res) => {
