@@ -2734,3 +2734,12 @@ body {
         min-width: 50%
     }
 }
+
+@media screen and (max-width: 400px) {
+    .video_img {
+        max-width: 300px
+    }
+
+
+}
+
