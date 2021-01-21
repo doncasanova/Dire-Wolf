@@ -2247,7 +2247,9 @@ body {
       background-size: cover; }
     /* line 19, sass/pages/_homepage.scss */
     .slider .slides .container {
-      padding: 200px 0;
+        position:relative;
+        top:-200px;
+      margin:200px;
       text-align: center; }
     /* line 24, sass/pages/_homepage.scss */
     .slider .slides .slide-title {
@@ -2736,8 +2738,10 @@ body {
 }
 
 @media screen and (max-width: 400px) {
-    .video_img {
-        max-width: 300px
+    .lazy-bg {
+        padding-bottom: 20px;
+        max-width: 100%;
+        max-height: 5px;
     }
 
 
